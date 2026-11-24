@@ -1,11 +1,11 @@
-# SkillPath AI — AI-Powered Internship Matching Assistant
+# SkillPath AI — AI-Powered Career and Skill Matcher
 
-SkillPath AI is an AI-powered career guidance prototype that helps students identify suitable internship opportunities based on their education, skills, experience, and interests.
+SkillPath AI is an AI-powered career guidance prototype that helps students and fresh graduates identify suitable internship and job opportunities based on their education, skills, experience, and interests.
 
-The project explores how prompt engineering, structured JSON outputs, factual grounding, and prompt-injection testing can be used to build a more reliable AI-based internship matching assistant.
+The project explores how prompt engineering, structured JSON outputs, factual grounding, and prompt-injection testing can be used to build a more reliable AI-based career matching assistant.
 
 ## 1. Project Objectives
-* Match student skills with available internship requirements.
+* Match student skills with available internship and job requirements.
 * Recommend relevant internship opportunities.
 * Identify missing skills and suggest areas for improvement.
 * Reduce hallucinations by grounding responses in provided student and internship data.
@@ -70,7 +70,7 @@ The project uses a sample student profile for testing:
 These are sample opportunities used for the prototype, not verified live job listings.
 
 ## 5. Main Features
-### A. Internship Matching
+### A. Internship and Job Matching
 Recommends internships based on the student's skills, education, and experience.
 
 ### B. Skill Gap Analysis
@@ -263,7 +263,7 @@ Do not commit API keys or other credentials to GitHub.
 The current project is an experimental prototype using a sample student profile and a small set of internship opportunities.
 
 Future improvements include:
-* Integrating a real internship database or verified job-listing API.
+* Integrating a real internship and job-listing database or verified job-listing API.
 * Developing a user interface for students.
 * Supporting multiple student profiles.
 * Improving JSON reliability for conversational questions.
