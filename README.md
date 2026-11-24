@@ -203,6 +203,11 @@ These are experimental estimates, not guaranteed production costs. Actual costs 
 ## 10. Project Outputs
 The notebook produces or saves the following files:
 
+## 10. Project Outputs
+
+The notebook produces or saves the following files:
+
+```text
 SkillPath-AI/
 │
 ├── skillpath-ai-project-3-team-notebook.ipynb
@@ -211,7 +216,7 @@ SkillPath-AI/
 │   ├── matching_system_v1.md
 │   ├── matching_system_v2.md
 │   ├── evaluation_system_v1.md
-│   ├── evaluation_system_v2.md
+│   └── evaluation_system_v2.md
 │
 ├── evals/
 │   ├── questions.csv
@@ -220,8 +225,8 @@ SkillPath-AI/
 │   ├── security_attacks.json
 │   └── security_results.json
 │
-└── README.md  
-```
+└── README.md
+
 The evaluation outputs include:
 * Frozen evaluation questions.
 * Prompt A and Prompt B comparison.
