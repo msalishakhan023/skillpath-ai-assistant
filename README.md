@@ -212,8 +212,6 @@ SkillPath-AI/
 │   ├── matching_system_v2.md
 │   ├── evaluation_system_v1.md
 │   ├── evaluation_system_v2.md
-│   ├── system_v1.md
-│   └── system_v2.md
 │
 ├── evals/
 │   ├── questions.csv
