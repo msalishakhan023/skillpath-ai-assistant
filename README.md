@@ -220,8 +220,8 @@ SkillPath-AI/
 │   ├── security_attacks.json
 │   └── security_results.json
 │
-└── README.md
-
+└── README.md  
+```
 The evaluation outputs include:
 * Frozen evaluation questions.
 * Prompt A and Prompt B comparison.
@@ -277,9 +277,6 @@ Through structured prompts, skill-gap analysis, JSON validation, prompt comparis
 The results suggest that a structured, evidence-based prompt is a promising foundation for developing a more reliable internship-matching assistant.
 
 ---
-
-## Check Your Understanding
-
 ## Check Your Understanding
 
 ### Mahum Junaid Nizami
