@@ -282,34 +282,45 @@ The results suggest that a structured, evidence-based prompt is a promising foun
 
 ## Check Your Understanding
 
-### Mahum Junaid
-1. For logits [2, 0] at T = 1, what is the probability of the first token?
-   Answer: 88.08% (Calculation: e^2 / (e^2 + e^0) = 7.389 / 8.389).
-2. Why is T = 0 the right choice for extracting fees and dates into JSON?
-   Answer: T=0 makes the model deterministic. We want exact facts, not creative hallucinations.
-3. 500 users, 10 queries a day, 1,000 input and 200 output tokens per query, USD 0.30 and 2.50 per million. Monthly cost?
-   Answer: $120.00 per month.
-4. Why must the retry wait include a random part?
-   Answer: To prevent the "thundering herd" problem. If all users retry at the exact same millisecond, the server crashes again. The random jitter spreads out the retries.
-5. v2 scores 17/20 on facts and v1 scores 15/20. Is v2 better? Justify with intervals.
-   Answer: Not definitively. With only 20 questions, the margin of error is roughly +/- 15%. The difference is 10%, which is smaller than the interval, meaning the improvement could be due to random chance.
-6. Why wrap user text in tags, and what does a canary detect?
-   Answer: Tags separate user data from system instructions to prevent prompt injection. The canary is a secret string that detects if the AI has leaked its system prompt.
+## Check Your Understanding
+
+### Mahum Junaid Nizami
+1. **For logits [2, 0] at T = 1, what is the probability of the first token?**
+   The probability of the first token is 88.08%, calculated using softmax on logits [2, 0] at T = 1.
+
+2. **Why is T = 0 the right choice for extracting fees and dates into JSON?**
+   T = 0 reduces randomness and makes JSON extraction more consistent, which is useful for extracting important information such as fees and dates.
+
+3. **500 users, 10 queries a day, 1,000 input and 200 output tokens per query, USD 0.30 and 2.50 per million. Monthly cost?**
+   The monthly cost is $120, assuming 30 days and the given input/output token prices.
+
+4. **Why must the retry wait include a random part?**
+   Random jitter prevents multiple requests from retrying simultaneously and overloading the API again.
+
+5. **v2 scores 17/20 on facts and v1 scores 15/20. Is v2 better? Justify with intervals.**
+   V2 has 85% accuracy compared with V1's 75%. However, we cannot conclude that V2 is significantly better without considering confidence intervals and paired testing.
+
+6. **Why wrap user text in tags, and what does a canary detect?**
+   Tags separate user-provided data from system instructions. A canary detects possible leakage of hidden system information.
 
 ### Alisha Khan
-1. For logits [2, 0] at T = 1, what is the probability of the first token?
-   Answer: 88.08%.
-2. Why is T = 0 the right choice for extracting fees and dates into JSON?
-   Answer: It guarantees consistent, factual outputs every time without creative variation.
-3. 500 users, 10 queries a day, 1,000 input and 200 output tokens per query, USD 0.30 and 2.50 per million. Monthly cost?
-   Answer: $120.00 per month.
-4. Why must the retry wait include a random part?
-   Answer: Random jitter prevents synchronized retries from overwhelming the server.
-5. v2 scores 17/20 on facts and v1 scores 15/20. Is v2 better? Justify with intervals.
-   Answer: We cannot prove it is better without a larger sample size, as the confidence intervals overlap.
-6. Why wrap user text in tags, and what does a canary detect?
-   Answer: Tags create boundaries to stop injection. The canary alerts us if an attack successfully extracted the prompt.
+1. **For logits [2, 0] at T = 1, what is the probability of the first token?**
+   Using the softmax equation, the first token gets a probability of approximately 0.8808, or 88.08%.
 
+2. **Why is T = 0 the right choice for extracting fees and dates into JSON?**
+   Temperature zero makes model outputs less random. This is important when we need consistent and predictable structured data, such as fees and dates.
+
+3. **500 users, 10 queries a day, 1,000 input and 200 output tokens per query, USD 0.30 and 2.50 per million. Monthly cost?**
+   There are 150 million input tokens and 30 million output tokens per month. Their costs are $45 and $75, respectively, giving a total of $120.
+
+4. **Why must the retry wait include a random part?**
+   Jitter adds a random delay to retries so that several requests do not retry together after an API failure.
+
+5. **v2 scores 17/20 on facts and v1 scores 15/20. Is v2 better? Justify with intervals.**
+   Although V2 scores 85% and V1 scores 75%, the improvement is not enough to establish statistical significance. Their Wilson intervals overlap substantially.
+
+6. **Why wrap user text in tags, and what does a canary detect?**
+   Tags help distinguish the user's question from the system's instructions. A canary is a secret marker used to detect whether hidden instructions have been exposed.
 ---
 Project: SkillPath AI
 Model: openai/gpt-oss-120b
