@@ -201,9 +201,6 @@ Using the recorded median token usage and the pricing assumptions in the noteboo
 These are experimental estimates, not guaranteed production costs. Actual costs depend on request length, model responses, provider pricing, and usage.
 
 ## 10. Project Outputs
-The notebook produces or saves the following files:
-
-## 10. Project Outputs
 
 The notebook produces or saves the following files:
 
@@ -226,6 +223,7 @@ SkillPath-AI/
 │   └── security_results.json
 │
 └── README.md
+```
 
 The evaluation outputs include:
 * Frozen evaluation questions.
